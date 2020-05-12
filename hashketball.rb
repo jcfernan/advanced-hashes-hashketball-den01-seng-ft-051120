@@ -135,11 +135,10 @@ def num_points_scored(player_a)
 end
 
 def shoe_size(player_a)
-  game_hash.each do |home_away, keys|
-    keys[:players].each do |player|
-      return player[:shoe] if player[:player_name] == player_a
-    end
-  end
+  game_hash.map {|home_away, keys| keys[:players]}
+      return player[:shoe] if keys[:player_name] == player_a
+    
+  
 end
 
 def team_colors(team_name)
